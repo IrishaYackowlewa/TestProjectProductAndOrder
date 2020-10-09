@@ -16,6 +16,13 @@ public class OrderLine {
     protected OrderLine() {
     }
 
+    public OrderLine(Long id, Long order_id, Long goods_id, int count) {
+        this.id = id;
+        this.order_id = order_id;
+        this.goods_id = goods_id;
+        this.count = count;
+    }
+
     public OrderLine(Long order_id, Long goods_id, int count) {
         this.order_id = order_id;
         this.goods_id = goods_id;

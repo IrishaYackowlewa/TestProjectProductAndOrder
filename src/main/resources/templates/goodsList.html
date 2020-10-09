@@ -15,6 +15,7 @@
         <h3 th:text="${post.name}"/>
         <p th:text="${post.price}"></p>
         <a th:href="'/detailsGoods/' + ${post.id}" class="btn btn-warning">Подробности товара</a>
+        <a th:href="'/addOrder/' + ${post.id}" class="btn btn-warning">Добавить товар в заказ</a>
     </div>
 </div>
 

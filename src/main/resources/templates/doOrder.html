@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Оформление заказа</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5" >
+    <h1>Оформление заказа</h1>
+    <form method="post">
+        <input type="text" name="client" placeholder="Введите свое имя" class="form-control"><br>
+        <input type="text" name="address" placeholder="Введите адрес доставки" class="form-control"><br>
+        <button type="submit" class="btn btn-success">Оформить</button><br>
+    </form>
+</div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+
+</body>
+</html>

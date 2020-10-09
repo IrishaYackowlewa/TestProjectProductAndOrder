@@ -22,12 +22,6 @@ public class GoodsController {
         return "goodsList";
     }
 
-    @PostMapping("/goods")
-    public String deleteGoods(@RequestParam String name, @RequestParam double price, Model model){
-        goodsService.edit(new Goods(name,price));
-        return "redirect:/goods";
-    }
-
     @GetMapping("/addGoods")
     public String addGoods(Model model){
         return "addGoods";

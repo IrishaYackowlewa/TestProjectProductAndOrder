@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Заказ</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5" >
+    <h1>Заказ</h1>
+    <div th:each="post : ${orderLine}" class="alert alert-info mt-2">
+        <h3 th:text="${post.goods_id}"/>
+        <p th:text="${post.count}"></p>
+        <a th:href="'/editOrder/'+ ${post.id}" class="btn btn-warning">Редактировать</a>
+        <form th:action="'/order/' + ${post.id} + '/remove'" method="post">
+            <button class="btn btn-warning" type="submit">Удалить</button>
+        </form>
+    </div>
+</div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+
+</body>
+</html>
