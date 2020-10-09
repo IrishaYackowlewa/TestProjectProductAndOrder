@@ -1,0 +1,1 @@
+package com.TestTask21Century.service;public interface EntityService<T> {    T save(T entity);    T edit (T entity);    T findById(Long primaryKey);    Iterable<T> findAll();    void delete(T entity);}

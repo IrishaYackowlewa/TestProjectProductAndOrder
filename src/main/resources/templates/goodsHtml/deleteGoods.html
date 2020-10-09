@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Список товаров</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5" >
+    <h1>Товары</h1>
+    <form method="post">
+        <input type="text" name="title" placeholder="Введите номер товара" class="form-control"><br>
+        <button type="submit" class="btn btn-success">Найти статью</button><br>
+    </form>
+    <a th:href="'/addGoods" class="btn btn-warning">Добавить товар</a>
+    <div th:each="post : ${goods}" class="alert alert-info mt-2">
+        <h3 th:text="${post.name}"/>
+        <p th:text="${post.price}"></p>
+        <a th:href="'/editGoods" class="btn btn-warning">Редактировать товар</a>
+        <a th:href="'/deleteGoods" class="btn btn-warning">Удалить товар</a>
+    </div>
+</div>
+
+<footer th:insert="blocks/footer :: footer"></footer>
+
+</body>
+</html>
