@@ -66,6 +66,7 @@ public class GoodsController {
         goodsService.delete(post);
         return "redirect:/goods";
     }
+
     //@RequestMapping("/hello")
     //private String hello() {
     //	return "Hello World!";

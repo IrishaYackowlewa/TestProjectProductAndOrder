@@ -6,8 +6,7 @@ import javax.persistence.*;
 @Table(name = "ORDER_LINE")
 public class OrderLine {
     @Id
-    @GeneratedValue
-    @Column(name = "id", length = 6, nullable = false)
+    @GeneratedValue(generator = "increment")
     private Long id;
     private Long order_id;
     private Long goods_id;

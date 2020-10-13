@@ -17,7 +17,7 @@ public class OrderLineController {
     private OrderLineServiceImpl orderLineService;
 
     @GetMapping("/orders")
-    public String goodsList(Model model){
+    public String ordersList(Model model){
         Iterable<OrderLine> orders = orderLineService.findAll();
         model.addAttribute("orders", orders);
         return "ordersLineList";
@@ -51,7 +51,7 @@ public class OrderLineController {
 
     @PostMapping("/editOrder/{id}")
     public String editingOrder(@PathVariable(value = "id") long id, @RequestParam int count, @RequestParam long goods_id, Model model){
-        orderLineService.edit(new OrderLine(id,0l,goods_id,count));
+        orderLineService.edit(new OrderLine(id,orderLineService.findById(id).getOrder_id(),goods_id,count));
         return "redirect:/orders";
     }
 

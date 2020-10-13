@@ -6,8 +6,7 @@ import javax.persistence.*;
 @Table(name = "GOODS")
 public class Goods {
     @Id
-    @GeneratedValue
-    @Column(name = "id", length = 6, nullable = false)
+    @GeneratedValue(generator = "increment")
     private Long id;
     private String name;
     private double price;

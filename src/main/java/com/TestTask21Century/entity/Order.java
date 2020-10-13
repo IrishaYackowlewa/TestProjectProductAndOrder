@@ -7,8 +7,7 @@ import java.util.Date;
 @Table(name = "`ORDER`")
 public class Order {
     @Id
-    @GeneratedValue
-    @Column(name = "id", length = 6, nullable = false)
+    @GeneratedValue(generator = "increment")
     private Long id;
     private String client;
     private Date date;

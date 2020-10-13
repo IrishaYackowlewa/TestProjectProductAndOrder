@@ -12,7 +12,7 @@
     <h1>Редактирование заказа</h1>
     <div th:each="post : ${orderLine}">
         <form method="post">
-            <input type="number" th:value="${post.id}" name="goods_id"class="form-control"><br>
+            <input type="number" th:value="${post.goods_id}" name="goods_id"class="form-control"><br>
             <input type="number" th:value="${post.count}" name="count" placeholder="Введите количество товора" class="form-control"><br>
             <button type="submit" class="btn btn-success">Обновить заказ</button><br>
         </form>

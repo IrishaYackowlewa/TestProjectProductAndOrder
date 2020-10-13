@@ -12,6 +12,7 @@
     <h1>Заказы</h1>
     <a th:href="'/goods'" class="btn btn-warning">Добавить заказ</a>
     <div th:each="post : ${orders}" class="alert alert-info mt-2">
+        <h3 th:text="${post.order_id}"/>
         <h3 th:text="${post.goods_id}"/>
         <p th:text="${post.count}"></p>
         <a th:href="'/detailsOrder/' + ${post.id}" class="btn btn-warning">Подробности заказа</a>

@@ -22,7 +22,7 @@ public class OrderLineServiceImpl implements EntityService<OrderLine> {
 
     @Override
     public OrderLine findById(Long id) {
-        return orderLineRepository.findById(id).orElse(new OrderLine(1l,1l,0));
+        return orderLineRepository.findById(id).orElse(new OrderLine(0l,0l,0));
     }
 
     @Override
